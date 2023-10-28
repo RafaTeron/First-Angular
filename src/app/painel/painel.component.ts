@@ -17,4 +17,8 @@ export class PainelComponent {
     console.log(this.frases)
   }
 
+  public atualizarResposta(): void{
+    console.log('Test')
+  }
+
 }
