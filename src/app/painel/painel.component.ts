@@ -10,6 +10,7 @@ import { FRASE } from './frase.mock';
 })
 export class PainelComponent {
 
+  public instrucao : string = 'Traduza a frase:'
   public frases: Array<Frase> = FRASE
 
   constructor() {
