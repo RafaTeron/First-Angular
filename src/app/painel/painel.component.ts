@@ -13,9 +13,13 @@ export class PainelComponent {
   public instrucao : string = 'Traduza a frase:'
   public frases: Array<Frase> = FRASE
   public resposta: any
+
+  public rodada: number = 0
+  public rodadaFrase: Frase
   
   constructor() {
-    console.log(this.frases)
+    this.rodadaFrase = this.frases[this.rodada]
+    console.log(this.rodadaFrase)
   }
 
   public atualizarResposta(resposta: Event): void{
