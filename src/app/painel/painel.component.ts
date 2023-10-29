@@ -12,13 +12,15 @@ export class PainelComponent {
 
   public instrucao : string = 'Traduza a frase:'
   public frases: Array<Frase> = FRASE
-
+  public resposta: any
+  
   constructor() {
     console.log(this.frases)
   }
 
-  public atualizarResposta(): void{
-    console.log('Test')
+  public atualizarResposta(resposta: Event): void{
+    this.resposta = ((<HTMLInputElement>resposta.target).value)
+    console.log(this.resposta)
   }
 
 }
