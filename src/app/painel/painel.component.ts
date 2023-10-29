@@ -28,6 +28,17 @@ export class PainelComponent {
   }
 
   public verificarTextoDigitado(): void {
+
+    if(this.rodadaFrase.frasePtBr == this.resposta){
+      alert('Tradução correta')
+
+      this.rodada++
+
+      this.rodadaFrase = this.frases[this.rodada]
+    }else{
+      alert('Tradução Incorreta, tente novamente.')
+    }
+
     console.log('Verificar resposta:', this.resposta)
   }
 }
