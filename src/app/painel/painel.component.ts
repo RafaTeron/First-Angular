@@ -20,7 +20,10 @@ export class PainelComponent {
 
   public atualizarResposta(resposta: Event): void{
     this.resposta = ((<HTMLInputElement>resposta.target).value)
-    console.log(this.resposta)
+    //console.log(this.resposta)
   }
 
+  public verificarTextoDigitado(): void {
+    console.log('Verificar resposta:', this.resposta)
+  }
 }
