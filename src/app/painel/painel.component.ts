@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Frase } from '../shared/frase.model';
 import { FRASE } from './frase.mock';
 
+
 @Component({
   selector: 'app-painel',
   templateUrl: './painel.component.html',
@@ -16,6 +17,8 @@ export class PainelComponent {
 
   public rodada: number = 0
   public rodadaFrase: Frase
+
+  public progresso: number = 0
   
   constructor() {
     this.rodadaFrase = this.frases[this.rodada]
@@ -34,7 +37,11 @@ export class PainelComponent {
 
       this.rodada++
 
+      this.progresso = this.progresso + (100 / this.frases.length)
+      console.log(this.progresso)
+
       this.rodadaFrase = this.frases[this.rodada]
+
     }else{
       alert('Tradução Incorreta, tente novamente.')
     }
