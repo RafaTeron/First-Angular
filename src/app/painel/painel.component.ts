@@ -20,6 +20,8 @@ export class PainelComponent {
   public rodadaFrase: Frase = new Frase('','');
 
   public progresso: number = 0
+
+  public tentativas: number = 3
   
   constructor() {
     this.atualizarRodada()
@@ -42,7 +44,12 @@ export class PainelComponent {
       this.progresso = this.progresso + (100 / this.frases.length)
     }else{
       alert('Tradução Incorreta, tente novamente.')
+      this.tentativas--
+      if(this.tentativas === -1){
+        alert('Você perdeu esse jogo.')
+      }
     }
+    console.log(this.tentativas)
 
     console.log('Verificar resposta:', this.resposta)
   }
