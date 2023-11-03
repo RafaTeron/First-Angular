@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { Coracao } from '../shared/coracao.model';
 
@@ -7,13 +7,20 @@ import { Coracao } from '../shared/coracao.model';
   templateUrl: './tentativas.component.html',
   styleUrls: ['./tentativas.component.scss']
 })
-export class TentativasComponent {
+export class TentativasComponent implements OnInit {
+  
 
-  public coracaoCheio : string = '/assets/coracao_cheio.png'
-  public coracaoVazio : string = '/assets/coracao_vazio.png'
+  @Input() public tentativas : number = 0
 
   public coracoes: Array<Coracao> = [
     new Coracao(true),new Coracao(true),new Coracao(true)
   ]
 
+  constructor(){
+    console.log(this.coracoes)
+  }
+
+  ngOnInit(): void {
+    console.log('tentativas recebidas do painel : ' + this.tentativas)
+  }
 }
