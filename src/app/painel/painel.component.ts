@@ -35,9 +35,11 @@ export class PainelComponent {
   public verificarTextoDigitado(): void {
 
     if(this.rodadaFrase.frasePtBr == this.resposta){
-      alert('Tradução correta')
-
       this.rodada++
+
+      if(this.rodada === 4){
+        alert('Concluiu as traduções com sucesso.')
+      }
 
       this.atualizarRodada()
 
